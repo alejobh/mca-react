@@ -26,6 +26,12 @@
   width: 100%;
 }
 
+.label {
+  color: $black;
+  font-size: 16px;
+  line-height: 20px;
+}
+
 .sign-up-button {
   background-image: url('../../assets/sign-up-button.png');
   height: 32px;
