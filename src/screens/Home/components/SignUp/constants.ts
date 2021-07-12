@@ -10,7 +10,7 @@ export const VALIDATIONS = {
     }
   },
   PASSWORD: {
-    required: i18next.t('signUp:required') as string,
+    required: i18next.t('SignUp:required') as string,
     pattern: {
       value: /^(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*[^\w\s\d])?.+$/,
       message: i18next.t('SignUp:validFormatPassword') as string
@@ -19,5 +19,8 @@ export const VALIDATIONS = {
       value: 8,
       message: i18next.t('SignUp:minLenghtPassword') as string
     }
+  },
+  NAME: {
+    required: i18next.t('SignUp:required') as string
   }
 };
