@@ -5,7 +5,7 @@ import SignUp from './components/SignUp';
 
 function Home() {
   return (
-    <div className={`m-top-2 ${styles.app}`}>
+    <div className={styles.app}>
       <SignUp />
     </div>
   );
