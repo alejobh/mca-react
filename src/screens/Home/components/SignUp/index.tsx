@@ -1,5 +1,6 @@
-/* eslint-disable react/react-in-jsx-scope */
+/* eslint-disable @typescript-eslint/naming-convention */
 /* eslint-disable @typescript-eslint/no-unused-vars */
+import React from 'react';
 import { useForm } from 'react-hook-form';
 import i18next from 'i18next';
 
@@ -8,22 +9,20 @@ import WoloxLogo from '../../assets/LogoWolox-Original.png';
 import styles from './styles.module.scss';
 
 type InputsValues = {
-  user: {
-    email: string;
-    password: string;
-    passwordConfirmation: string;
-    firstName: string;
-    lastName: string;
-    locale: string;
-  };
+  email: string;
+  password: string;
+  password_confirmation: string;
+  first_name: string;
+  last_name: string;
+  locale: string;
 };
 
 enum UserFieldIds {
-  FIRST_NAME = 'user.firstName',
-  LAST_NAME = 'user.lastName',
-  EMAIL = 'user.email',
-  PASSWORD = 'user.password',
-  PASSWORD_CONFIRMATION = 'user.passwordConfirmation'
+  FIRST_NAME = 'first_name',
+  LAST_NAME = 'last_name',
+  EMAIL = 'email',
+  PASSWORD = 'password',
+  PASSWORD_CONFIRMATION = 'password_confirmation'
 }
 
 function SignUp() {
