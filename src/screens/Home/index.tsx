@@ -8,7 +8,7 @@ function Home() {
   const queryClient = new QueryClient();
   return (
     <QueryClientProvider client={queryClient}>
-      <div className={`m-top-2 ${styles.app}`}>
+      <div className={styles.app}>
         <SignUp />
       </div>
     </QueryClientProvider>

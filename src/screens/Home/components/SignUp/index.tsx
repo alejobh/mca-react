@@ -1,4 +1,6 @@
-import React from 'react';
+/* eslint-disable no-negated-condition */
+/* eslint-disable react/react-in-jsx-scope */
+/* eslint-disable @typescript-eslint/naming-convention */
 import { useForm } from 'react-hook-form';
 import { useMutation } from 'react-query';
 import i18next from 'i18next';
@@ -11,8 +13,21 @@ import WoloxLogo from '../../assets/LogoWolox-Original.png';
 import styles from './styles.module.scss';
 
 type InputsValues = {
-  user: UserForm;
+  email: string;
+  password: string;
+  password_confirmation: string;
+  first_name: string;
+  last_name: string;
+  locale: string;
 };
+
+enum UserFieldIds {
+  FIRST_NAME = 'first_name',
+  LAST_NAME = 'last_name',
+  EMAIL = 'email',
+  PASSWORD = 'password',
+  PASSWORD_CONFIRMATION = 'password_confirmation'
+}
 
 function SignUp() {
   const {
@@ -23,8 +38,11 @@ function SignUp() {
   } = useForm<InputsValues>();
 
   const mutation = useMutation(signUp, {
-    onSuccess: () => {
-      console.log(mutation.data?.data);
+    onError: error => {
+      console.log(error);
+    },
+    onSuccess: data => {
+      console.log(data);
     }
   });
 
@@ -35,30 +53,32 @@ function SignUp() {
       <form className={styles.signUpForm} onSubmit={handleSubmit(onSubmit)}>
         <img src={WoloxLogo} className={`m-bottom-3 ${styles.logo}`} />
         <div className={`column start m-bottom-3 ${styles.inputContainer}`}>
-          <label className={`m-bottom-2 ${styles.label}`}>{i18next.t('SignUp:firstName')}</label>
+          <label htmlFor={UserFieldIds.FIRST_NAME} className={`m-bottom-2 ${styles.label}`}>
+            {i18next.t('SignUp:firstName')}
+          </label>
           <input
-            {...register('user.first_name', { required: i18next.t('SignUp:required') as string })}
+            {...register(UserFieldIds.FIRST_NAME, { required: i18next.t('SignUp:required') as string })}
             className={styles.input}
           />
-          {errors.user?.first_name && (
-            <span className={styles.inputError}>{errors.user?.first_name.message}</span>
-          )}
+          {errors.first_name && <span className={styles.inputError}>{errors.first_name.message}</span>}
         </div>
         <div className={`column start m-bottom-3 ${styles.inputContainer}`}>
-          <label className={`m-bottom-2 ${styles.label}`}>{i18next.t('SignUp:lastName')}</label>
+          <label htmlFor={UserFieldIds.LAST_NAME} className={`m-bottom-2 ${styles.label}`}>
+            {i18next.t('SignUp:lastName')}
+          </label>
           <input
-            {...register('user.last_name', { required: i18next.t('SignUp:required') as string })}
+            {...register(UserFieldIds.LAST_NAME, { required: i18next.t('SignUp:required') as string })}
             className={styles.input}
           />
-          {errors.user?.last_name && (
-            <span className={styles.inputError}>{errors.user?.last_name.message}</span>
-          )}
+          {errors.last_name && <span className={styles.inputError}>{errors.last_name.message}</span>}
         </div>
         <div className={`column start m-bottom-3 ${styles.inputContainer}`}>
-          <label className={`m-bottom-2 ${styles.label}`}>{i18next.t('SignUp:email')}</label>
+          <label htmlFor={UserFieldIds.EMAIL} className={`m-bottom-2 ${styles.label}`}>
+            {i18next.t('SignUp:email')}
+          </label>
           <input
             type="email"
-            {...register('user.email', {
+            {...register(UserFieldIds.EMAIL, {
               required: i18next.t('SignUp:required') as string,
               pattern: {
                 value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i,
@@ -67,13 +87,15 @@ function SignUp() {
             })}
             className={styles.input}
           />
-          {errors.user?.email && <span className={styles.inputError}>{errors.user?.email.message}</span>}
+          {errors.email && <span className={styles.inputError}>{errors.email.message}</span>}
         </div>
         <div className={`column start m-bottom-3 ${styles.inputContainer}`}>
-          <label className={`m-bottom-2 ${styles.label}`}>Password</label>
+          <label htmlFor={UserFieldIds.PASSWORD} className={`m-bottom-2 ${styles.label}`}>
+            Password
+          </label>
           <input
             type="password"
-            {...register('user.password', {
+            {...register(UserFieldIds.PASSWORD, {
               required: i18next.t('SignUp:required') as string,
               pattern: {
                 value: /^(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*[^\w\s\d])?.+$/,
@@ -86,23 +108,23 @@ function SignUp() {
             })}
             className={styles.input}
           />
-          {errors.user?.password && (
-            <span className={styles.inputError}>{errors.user?.password.message}</span>
-          )}
+          {errors.password && <span className={styles.inputError}>{errors.password.message}</span>}
         </div>
         <div className={`column start m-bottom-5 ${styles.inputContainer}`}>
-          <label className={`m-bottom-2 ${styles.label}`}>{i18next.t('SignUp:passwordConfirmation')}</label>
+          <label htmlFor={UserFieldIds.PASSWORD_CONFIRMATION} className={`m-bottom-2 ${styles.label}`}>
+            {i18next.t('SignUp:passwordConfirmation')}
+          </label>
           <input
             type="password"
-            {...register('user.password_confirmation', {
+            {...register(UserFieldIds.PASSWORD_CONFIRMATION, {
               required: true,
               validate: value =>
-                value === watch('user.password') || (i18next.t('SignUp:noMatchPassword') as string)
+                value === watch(UserFieldIds.PASSWORD) || (i18next.t('SignUp:noMatchPassword') as string)
             })}
             className={styles.input}
           />
-          {errors.user?.password_confirmation && (
-            <span className={styles.inputError}>{errors.user?.password_confirmation.message}</span>
+          {errors.password_confirmation && (
+            <span className={styles.inputError}>{errors.password_confirmation.message}</span>
           )}
         </div>
         <button type="submit" className={`m-bottom-3 ${styles.signUpButton}`}>
@@ -111,7 +133,11 @@ function SignUp() {
         <div className={`m-bottom-3 ${styles.line}`} />
         <button type="button" className={styles.signUpButtonSecondary} />
       </form>
-      {mutation.isError && <span>response :{mutation.error}</span>}
+      {
+        <span className={!mutation.data?.ok ? `${styles.error}` : `${styles.noError}`}>
+          response :{mutation.data?.problem}
+        </span>
+      }
     </div>
   );
 }

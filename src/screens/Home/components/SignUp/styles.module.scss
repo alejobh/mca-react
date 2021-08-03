@@ -57,3 +57,13 @@
   height: 2px;
   width: 100%;
 }
+
+.no-error {
+  display: none;
+}
+
+.error {
+  color: $red;
+  display: block;
+  font-size: 20px;
+}
