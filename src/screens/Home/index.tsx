@@ -1,8 +1,8 @@
 import React from 'react';
 import { QueryClient, QueryClientProvider } from 'react-query';
 
-import styles from './styles.module.scss';
 import SignUp from './components/SignUp';
+import styles from './styles.module.scss';
 
 function Home() {
   const queryClient = new QueryClient();

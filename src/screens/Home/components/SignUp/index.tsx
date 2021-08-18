@@ -50,7 +50,7 @@ function SignUp() {
 
   return (
     <div className="column center middle full-width">
-      <form className={styles.signUpForm} onSubmit={handleSubmit(onSubmit)}>
+      <form className={`m-bottom-2 ${styles.signUpForm}`} onSubmit={handleSubmit(onSubmit)}>
         <img src={WoloxLogo} className={`m-bottom-3 ${styles.logo}`} />
         <div className={`column start m-bottom-3 ${styles.inputContainer}`}>
           <label htmlFor={UserFieldIds.FIRST_NAME} className={`m-bottom-2 ${styles.label}`}>
