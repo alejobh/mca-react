@@ -9,7 +9,7 @@ function Header() {
       <nav>
         <ul className={styles.navbar}>
           <li className={styles.navbarItem}>
-            <Link to="/login">Login</Link>
+            <Link to="/">Login</Link>
           </li>
           <li className={styles.navbarItem}>
             <Link to="/sign_up">Sign Up</Link>

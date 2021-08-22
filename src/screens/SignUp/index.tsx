@@ -5,10 +5,9 @@ import { useForm } from 'react-hook-form';
 import { useMutation } from 'react-query';
 import i18next from 'i18next';
 
+import WoloxLogo from 'assets/LogoWolox-Original.png';
 import { signUp, UserForm } from 'services/UserService';
 import Loading from 'components/Spinner/components/loading';
-
-import WoloxLogo from '../../assets/LogoWolox-Original.png';
 
 import styles from './styles.module.scss';
 
@@ -133,11 +132,9 @@ function SignUp() {
         <div className={`m-bottom-3 ${styles.line}`} />
         <button type="button" className={styles.signUpButtonSecondary} />
       </form>
-      {
-        <span className={!mutation.data?.ok ? `${styles.error}` : `${styles.noError}`}>
-          response :{mutation.data?.problem}
-        </span>
-      }
+      <span className={!mutation.data?.ok ? `${styles.error}` : `${styles.noError}`}>
+        response :{mutation.data?.problem}
+      </span>
     </div>
   );
 }

@@ -1,23 +1,28 @@
 import React from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import { QueryClient, QueryClientProvider } from 'react-query';
 
 import 'scss/application.scss';
-import Header from 'components/Header';
+
 import Home from 'screens/Home';
-import Login from 'screens/Login';
+import SignUp from 'screens/SignUp';
+import Header from 'components/Header';
 
 function App() {
+  const queryClient = new QueryClient();
   return (
     <Router>
-      <Header />
-      <Switch>
-        <Route path="/">
-          <Login />
-        </Route>
-        <Route path="/sign_up">
-          <Home />
-        </Route>
-      </Switch>
+      <QueryClientProvider client={queryClient}>
+        <Header />
+        <Switch>
+          <Route path="/sign_up">
+            <SignUp />
+          </Route>
+          <Route path="/">
+            <Home />
+          </Route>
+        </Switch>
+      </QueryClientProvider>
     </Router>
   );
 }
