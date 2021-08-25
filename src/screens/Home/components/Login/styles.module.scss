@@ -1,7 +1,69 @@
-.login {
+@import '../../../../scss//variables/colors';
+
+.login-form {
   align-items: center;
+  background-color: $white-smoke;
+  border-top: 8px solid $cian;
   display: flex;
-  font-size: 50px;
-  height: 100vh;
-  justify-content: center;
+  flex-direction: column;
+  max-width: 300px;
+  padding: 28px 25px 24px;
+  width: 100%;
+}
+
+.logo {
+  height: 70px;
+  width: 212px;
+  object-fit: contain;
+}
+
+.input-container {
+  width: 100%;
+}
+
+.input {
+  height: 32px;
+  width: 100%;
+}
+
+.input-error {
+  color: $red;
+  font-size: 10px;
+}
+
+.label {
+  color: $black;
+  font-size: 16px;
+  line-height: 20px;
+}
+
+.login-button {
+  background-color: $yellow-green;
+  border-radius: 5px;
+  color: $white;
+  font-size: 16px;
+  height: 32px;
+  width: 100%;
+
+  &-secondary {
+    background-image: url('../../../../assets/sign-up.png');
+    height: 32px;
+    width: 100%;
+  }
+}
+
+.line {
+  background-color: $light-grey;
+  height: 2px;
+  width: 100%;
+}
+
+.no-error {
+  display: none;
+}
+
+.error {
+  color: $red;
+  display: block;
+  font-size: 20px;
 }

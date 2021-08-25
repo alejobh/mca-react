@@ -48,7 +48,7 @@ function SignUp() {
   const onSubmit = (user: UserForm) => mutation.mutate(user);
 
   return (
-    <div className="column center middle full-width">
+    <div className="column center middle full-width full-height">
       <form className={`m-bottom-2 ${styles.signUpForm}`} onSubmit={handleSubmit(onSubmit)}>
         <img src={WoloxLogo} className={`m-bottom-3 ${styles.logo}`} />
         <div className={`column start m-bottom-3 ${styles.inputContainer}`}>
