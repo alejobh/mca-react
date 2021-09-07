@@ -1,6 +1,8 @@
+/* eslint-disable no-negated-condition */
 import React from 'react';
 import { useForm } from 'react-hook-form';
 import { useMutation } from 'react-query';
+import { useHistory } from 'react-router-dom';
 import i18next from 'i18next';
 
 import WoloxLogo from 'assets/LogoWolox-Original.png';
@@ -25,6 +27,7 @@ function Login() {
     handleSubmit,
     formState: { errors }
   } = useForm<InputsValues>();
+  const history = useHistory();
 
   const mutation = useMutation(login, {
     onError: error => {
@@ -36,6 +39,13 @@ function Login() {
   });
 
   const onSubmit = (user: LoginProps) => mutation.mutate(user);
+  console.log(mutation);
+  const redirectRegiter = () => {
+    console.log(mutation.status);
+    if (mutation.data?.headers) {
+      history.push('/sign_up');
+    }
+  };
 
   return (
     <div className="column center middle full-width">
@@ -79,13 +89,13 @@ function Login() {
           />
           {errors.password && <span className={styles.inputError}>{errors.password.message}</span>}
         </div>
-        <button type="submit" className={`m-bottom-3 ${styles.loginButton}`}>
+        <button type="submit" onClick={redirectRegiter} className={`m-bottom-3 ${styles.loginButton}`}>
           {mutation.isLoading ? <Loading /> : 'Login'}
         </button>
         <div className={`m-bottom-3 ${styles.line}`} />
         <button type="button" className={styles.loginButtonSecondary} />
       </form>
-      {/* <span className={!mutation.data?.ok ? `${styles.error}` : ''}>response :{mutation.data?.problem}</span> */}
+      {mutation.error && <span className={styles.error}>Credenciales incorrectas</span>}
     </div>
   );
 }
