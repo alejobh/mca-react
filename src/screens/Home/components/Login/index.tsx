@@ -1,5 +1,5 @@
 /* eslint-disable no-negated-condition */
-import React from 'react';
+import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { useMutation } from 'react-query';
 import { useHistory } from 'react-router-dom';
@@ -28,24 +28,20 @@ function Login() {
     formState: { errors }
   } = useForm<InputsValues>();
   const history = useHistory();
+  const [notCredentials, setNotCredentials] = useState(false);
 
   const mutation = useMutation(login, {
     onError: error => {
       console.log(error);
+      setNotCredentials(true);
     },
     onSuccess: data => {
       console.log(data.headers);
+      history.push('/sign_up');
     }
   });
 
   const onSubmit = (user: LoginProps) => mutation.mutate(user);
-  console.log(mutation);
-  const redirectRegiter = () => {
-    console.log(mutation.status);
-    if (mutation.data?.headers) {
-      history.push('/sign_up');
-    }
-  };
 
   return (
     <div className="column center middle full-width">
@@ -89,13 +85,13 @@ function Login() {
           />
           {errors.password && <span className={styles.inputError}>{errors.password.message}</span>}
         </div>
-        <button type="submit" onClick={redirectRegiter} className={`m-bottom-3 ${styles.loginButton}`}>
+        <button type="submit" className={`m-bottom-3 ${styles.loginButton}`}>
           {mutation.isLoading ? <Loading /> : 'Login'}
         </button>
         <div className={`m-bottom-3 ${styles.line}`} />
         <button type="button" className={styles.loginButtonSecondary} />
       </form>
-      {mutation.error && <span className={styles.error}>Credenciales incorrectas</span>}
+      {notCredentials && <span className={styles.error}>Credenciales incorrectas</span>}
     </div>
   );
 }
