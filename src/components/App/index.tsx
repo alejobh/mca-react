@@ -1,5 +1,4 @@
-import React from 'react';
-
+/* eslint-disable react/react-in-jsx-scope */
 import 'scss/application.scss';
 import Home from 'screens/Home/index';
 

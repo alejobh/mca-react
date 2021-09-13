@@ -1,6 +1,6 @@
+/* eslint-disable react/react-in-jsx-scope */
 /* eslint-disable @typescript-eslint/naming-convention */
 /* eslint-disable @typescript-eslint/no-unused-vars */
-import React from 'react';
 import { useForm } from 'react-hook-form';
 import i18next from 'i18next';
 
