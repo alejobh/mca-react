@@ -1,5 +1,4 @@
 /* eslint-disable react/react-in-jsx-scope */
-/* eslint-disable @typescript-eslint/naming-convention */
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import { useForm } from 'react-hook-form';
 import i18next from 'i18next';
@@ -8,6 +7,7 @@ import WoloxLogo from '../../assets/LogoWolox-Original.png';
 
 import styles from './styles.module.scss';
 
+/* eslint-disable @typescript-eslint/naming-convention */
 type InputsValues = {
   email: string;
   password: string;
@@ -16,6 +16,7 @@ type InputsValues = {
   last_name: string;
   locale: string;
 };
+/* eslint-enable @typescript-eslint/naming-convention */
 
 enum UserFieldIds {
   FIRST_NAME = 'first_name',
