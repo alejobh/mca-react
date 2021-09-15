@@ -1,4 +1,3 @@
-/* eslint-disable no-negated-condition */
 /* eslint-disable react/react-in-jsx-scope */
 /* eslint-disable @typescript-eslint/naming-convention */
 import { useForm } from 'react-hook-form';
@@ -50,8 +49,8 @@ function SignUp() {
 
   return (
     <div className="column center middle full-width">
-      <form className={styles.signUpForm} onSubmit={handleSubmit(onSubmit)}>
-        <img src={WoloxLogo} className={`m-bottom-3 ${styles.logo}`} />
+      <form className={`m-bottom-2 ${styles.signUpForm}`} onSubmit={handleSubmit(onSubmit)}>
+        <img src={WoloxLogo} alt="Wolox" className={`m-bottom-3 ${styles.logo}`} />
         <div className={`column start m-bottom-3 ${styles.inputContainer}`}>
           <label htmlFor={UserFieldIds.FIRST_NAME} className={`m-bottom-2 ${styles.label}`}>
             {i18next.t('SignUp:firstName')}
@@ -91,7 +90,7 @@ function SignUp() {
         </div>
         <div className={`column start m-bottom-3 ${styles.inputContainer}`}>
           <label htmlFor={UserFieldIds.PASSWORD} className={`m-bottom-2 ${styles.label}`}>
-            Password
+            {i18next.t('SignUp:password') as string}
           </label>
           <input
             type="password"
@@ -133,11 +132,8 @@ function SignUp() {
         <div className={`m-bottom-3 ${styles.line}`} />
         <button type="button" className={styles.signUpButtonSecondary} />
       </form>
-      {
-        <span className={!mutation.data?.ok ? `${styles.error}` : `${styles.noError}`}>
-          response :{mutation.data?.problem}
-        </span>
-      }
+      {!mutation.data ||
+        (!mutation.data?.ok && <span className={styles.error}>{i18next.t('SignUp:messageError')}</span>)}
     </div>
   );
 }
