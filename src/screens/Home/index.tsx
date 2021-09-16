@@ -1,4 +1,4 @@
-import React from 'react';
+/* eslint-disable react/react-in-jsx-scope */
 import { QueryClient, QueryClientProvider } from 'react-query';
 
 import styles from './styles.module.scss';
