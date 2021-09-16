@@ -1,5 +1,9 @@
 @import '~wolox-equalizer/equalizer';
 
+@import 'fonts/fonts';
+
+@import 'variables/colors';
+
 @import 'layout';
 
 @import 'margins';
@@ -18,4 +22,8 @@ body {
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+}
+
+* {
+  font-family: $font;
 }
