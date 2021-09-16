@@ -129,7 +129,7 @@ function SignUp() {
           )}
         </div>
         <button type="submit" className={`m-bottom-3 ${styles.signUpButton}`}>
-          {mutation.isLoading ? <Loading /> : 'Sign Up'}
+          {mutation.isLoading ? <Loading /> : i18next.t('SignUp:signUpTitle')}
         </button>
         <div className={`m-bottom-3 ${styles.line}`} />
         <button type="button" className={styles.signUpButtonSecondary} />
