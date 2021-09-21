@@ -1,4 +1,3 @@
-/* eslint-disable no-negated-condition */
 /* eslint-disable react/react-in-jsx-scope */
 /* eslint-disable @typescript-eslint/naming-convention */
 import { useForm } from 'react-hook-form';
@@ -132,7 +131,8 @@ function SignUp() {
         <div className={`m-bottom-3 ${styles.line}`} />
         <button type="button" className={styles.signUpButtonSecondary} />
       </form>
-      <span className={!mutation.data?.ok ? `${styles.error}` : ''}>response :{mutation.data?.problem}</span>
+      {!mutation.data ||
+        (!mutation.data?.ok && <span className={styles.error}>{i18next.t('SignUp:messageError')}</span>)}
     </div>
   );
 }

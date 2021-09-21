@@ -1,5 +1,5 @@
-/* eslint-disable no-negated-condition */
-import React, { useState } from 'react';
+/* eslint-disable react/react-in-jsx-scope */
+import { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { useMutation } from 'react-query';
 import { useHistory } from 'react-router-dom';

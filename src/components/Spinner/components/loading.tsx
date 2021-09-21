@@ -1,4 +1,4 @@
-import React from 'react';
+/* eslint-disable react/react-in-jsx-scope */
 // eslint-disable-next-line import/no-named-as-default
 import Spinner, { SpinnerProps } from 'react-spinkit';
 
