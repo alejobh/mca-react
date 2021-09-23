@@ -66,7 +66,7 @@ function Login() {
         </div>
         <div className={`column start m-bottom-3 ${styles.inputContainer}`}>
           <label htmlFor={UserFieldIds.PASSWORD} className={`m-bottom-2 ${styles.label}`}>
-            Password
+            {i18next.t('Login:password')}
           </label>
           <input
             type="password"
