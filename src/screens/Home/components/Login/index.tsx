@@ -46,7 +46,7 @@ function Login() {
   return (
     <div className="column center middle full-width">
       <form className={`m-bottom-2 ${styles.loginForm}`} onSubmit={handleSubmit(onSubmit)}>
-        <img src={WoloxLogo} className={`m-bottom-3 ${styles.logo}`} />
+        <img src={WoloxLogo} alt={i18next.t('Login:altWolox')} className={`m-bottom-3 ${styles.logo}`} />
         <div className={`column start m-bottom-3 ${styles.inputContainer}`}>
           <label htmlFor={UserFieldIds.EMAIL} className={`m-bottom-2 ${styles.label}`}>
             {i18next.t('SignUp:email')}
