@@ -1,15 +1,16 @@
+@import '../../scss/variables/colors';
+
 .navbar {
   align-items: center;
+  border-top: 6px solid $cian;
   display: flex;
-  justify-content: center;
-  height: 50px;
+  height: 70px;
+  justify-content: space-around;
+  box-shadow: 0 2px 15px 0 $gray;
   width: 100%;
 }
 
-.navbar-item {
-  padding: 10px;
-
-  a {
-    font-size: 16px;
-  }
+.logout-button {
+  color: $black;
+  font-size: 18px;
 }

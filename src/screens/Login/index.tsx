@@ -38,7 +38,8 @@ function Login() {
     },
     onSuccess: data => {
       console.log(data.headers);
-      history.push('/sign_up');
+      data.headers && window.localStorage.setItem('access-token', data.headers['access-token']);
+      history.push('/home');
     }
   });
 
