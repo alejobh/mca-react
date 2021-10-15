@@ -1,5 +1,4 @@
 /* eslint-disable react/react-in-jsx-scope */
-/* eslint-disable no-negated-condition */
 import { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { useMutation } from 'react-query';
@@ -48,7 +47,7 @@ function Login() {
   return (
     <div className="column center middle full-width full-height">
       <form className={`m-bottom-2 ${styles.loginForm}`} onSubmit={handleSubmit(onSubmit)}>
-        <img src={WoloxLogo} className={`m-bottom-3 ${styles.logo}`} />
+        <img src={WoloxLogo} alt={`${i18next.t('Login:altWolox')}`} className={`m-bottom-3 ${styles.logo}`} />
         <div className={`column start m-bottom-3 ${styles.inputContainer}`}>
           <label htmlFor={UserFieldIds.EMAIL} className={`m-bottom-2 ${styles.label}`}>
             {i18next.t('SignUp:email')}
@@ -68,7 +67,7 @@ function Login() {
         </div>
         <div className={`column start m-bottom-3 ${styles.inputContainer}`}>
           <label htmlFor={UserFieldIds.PASSWORD} className={`m-bottom-2 ${styles.label}`}>
-            Password
+            {i18next.t('Login:password')}
           </label>
           <input
             type="password"
