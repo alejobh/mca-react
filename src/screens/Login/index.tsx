@@ -38,7 +38,7 @@ function Login() {
     onSuccess: data => {
       console.log(data.headers);
       data.headers && window.localStorage.setItem('access-token', data.headers['access-token']);
-      history.push('/home');
+      history.push('/');
     }
   });
 
