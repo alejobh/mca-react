@@ -26,6 +26,11 @@
   width: 100%;
 }
 
+.input-error {
+  color: $red;
+  font-size: 10px;
+}
+
 .label {
   color: $black;
   font-size: 16px;
@@ -33,7 +38,10 @@
 }
 
 .sign-up-button {
-  background-image: url('../../assets/sign-up-button.png');
+  background-color: $yellow-green;
+  border-radius: 5px;
+  color: $white;
+  font-size: 16px;
   height: 32px;
   width: 100%;
 
@@ -48,4 +56,13 @@
   background-color: $light-grey;
   height: 2px;
   width: 100%;
+}
+
+.no-error {
+  display: none;
+}
+
+.error {
+  color: $red;
+  font-size: 20px;
 }
