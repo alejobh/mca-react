@@ -1,4 +1,4 @@
-import React from 'react';
+/* eslint-disable react/react-in-jsx-scope */
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import { QueryClient, QueryClientProvider } from 'react-query';
 
