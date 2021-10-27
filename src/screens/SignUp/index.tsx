@@ -4,10 +4,9 @@ import { useForm } from 'react-hook-form';
 import { useMutation } from 'react-query';
 import i18next from 'i18next';
 
+import WoloxLogo from 'assets/LogoWolox-Original.png';
 import { signUp, UserForm } from 'services/UserService';
 import Loading from 'components/Spinner/components/loading';
-
-import WoloxLogo from '../../assets/LogoWolox-Original.png';
 
 import styles from './styles.module.scss';
 
@@ -50,9 +49,13 @@ function SignUp() {
   const onSubmit = (user: UserForm) => mutation.mutate(user);
 
   return (
-    <div className="column center middle full-width">
+    <div className="column center middle full-width full-height">
       <form className={`m-bottom-2 ${styles.signUpForm}`} onSubmit={handleSubmit(onSubmit)}>
-        <img src={WoloxLogo} alt="Wolox" className={`m-bottom-3 ${styles.logo}`} />
+        <img
+          src={WoloxLogo}
+          alt={`${i18next.t('SignUp:altLogoWolox')}`}
+          className={`m-bottom-3 ${styles.logo}`}
+        />
         <div className={`column start m-bottom-3 ${styles.inputContainer}`}>
           <label htmlFor={UserFieldIds.FIRST_NAME} className={`m-bottom-2 ${styles.label}`}>
             {i18next.t('SignUp:firstName')}

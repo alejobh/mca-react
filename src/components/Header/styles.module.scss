@@ -1,0 +1,13 @@
+@import '../../scss/variables/texts';
+
+.navbar {
+  height: 50px;
+
+  &-item {
+    padding: 10px;
+  }
+
+  &-link {
+    font-size: $font-size-medium;
+  }
+}
