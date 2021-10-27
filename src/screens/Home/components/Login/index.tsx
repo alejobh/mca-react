@@ -6,7 +6,7 @@ import styles from './styles.module.scss';
 function Login() {
   return (
     <div className={`row center middle full-width full-height ${styles.login}`}>
-      {i18next.t('Login:logintitle')}
+      {i18next.t('Global:login')}
     </div>
   );
 }

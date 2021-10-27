@@ -51,7 +51,11 @@ function SignUp() {
   return (
     <div className="column center middle full-width full-height">
       <form className={`m-bottom-2 ${styles.signUpForm}`} onSubmit={handleSubmit(onSubmit)}>
-        <img src={WoloxLogo} alt="Wolox" className={`m-bottom-3 ${styles.logo}`} />
+        <img
+          src={WoloxLogo}
+          alt={`${i18next.t('SignUp:altLogoWolox')}`}
+          className={`m-bottom-3 ${styles.logo}`}
+        />
         <div className={`column start m-bottom-3 ${styles.inputContainer}`}>
           <label htmlFor={UserFieldIds.FIRST_NAME} className={`m-bottom-2 ${styles.label}`}>
             {i18next.t('SignUp:firstName')}
