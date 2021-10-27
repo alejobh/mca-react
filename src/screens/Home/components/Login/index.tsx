@@ -6,20 +6,12 @@ import { useHistory } from 'react-router-dom';
 import i18next from 'i18next';
 
 import WoloxLogo from 'assets/LogoWolox-Original.png';
-import { login, LoginProps } from 'services/LoginService';
+import { login } from 'services/LoginService';
 import Loading from 'components/Spinner/components/loading';
 
+import { LoginProps, InputsValues, UserFieldIds } from '../../../../interfaces/interfaces';
+
 import styles from './styles.module.scss';
-
-type InputsValues = {
-  email: string;
-  password: string;
-};
-
-enum UserFieldIds {
-  EMAIL = 'email',
-  PASSWORD = 'password'
-}
 
 function Login() {
   const {
