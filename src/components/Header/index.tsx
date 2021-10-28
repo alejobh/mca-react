@@ -1,5 +1,6 @@
-import React from 'react';
+/* eslint-disable react/react-in-jsx-scope */
 import { useHistory } from 'react-router-dom';
+import i18next from 'i18next';
 
 import LogoWolox from '../../assets/LogoWolox-Original.png';
 
@@ -18,7 +19,7 @@ function Header() {
       <nav className={styles.navbar}>
         <img src={LogoWolox} />
         <button type="button" onClick={logout} className={styles.logoutButton}>
-          Logout
+          {i18next.t('Header:logout')}
         </button>
       </nav>
     </header>

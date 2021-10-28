@@ -1,23 +1,16 @@
 /* eslint-disable react/react-in-jsx-scope */
-/* eslint-disable @typescript-eslint/naming-convention */
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import { useForm } from 'react-hook-form';
 import { useMutation } from 'react-query';
 import i18next from 'i18next';
 
 import WoloxLogo from 'assets/LogoWolox-Original.png';
-import { signUp, UserForm } from 'services/UserService';
+import { signUp } from 'services/UserService';
 import Loading from 'components/Spinner/components/loading';
 
-import styles from './styles.module.scss';
+import { UserForm } from '../../interfaces/interfaces';
 
-type InputsValues = {
-  email: string;
-  password: string;
-  password_confirmation: string;
-  first_name: string;
-  last_name: string;
-  locale: string;
-};
+import styles from './styles.module.scss';
 
 enum UserFieldIds {
   FIRST_NAME = 'first_name',
@@ -33,7 +26,7 @@ function SignUp() {
     handleSubmit,
     formState: { errors },
     watch
-  } = useForm<InputsValues>();
+  } = useForm<UserForm>();
 
   const mutation = useMutation(signUp, {
     onError: error => {
@@ -49,7 +42,11 @@ function SignUp() {
   return (
     <div className="column center middle full-width full-height">
       <form className={`m-bottom-2 ${styles.signUpForm}`} onSubmit={handleSubmit(onSubmit)}>
-        <img src={WoloxLogo} className={`m-bottom-3 ${styles.logo}`} />
+        <img
+          src={WoloxLogo}
+          alt={`${i18next.t('Global:logoWolox')}`}
+          className={`m-bottom-3 ${styles.logo}`}
+        />
         <div className={`column start m-bottom-3 ${styles.inputContainer}`}>
           <label htmlFor={UserFieldIds.FIRST_NAME} className={`m-bottom-2 ${styles.label}`}>
             {i18next.t('SignUp:firstName')}
@@ -89,7 +86,7 @@ function SignUp() {
         </div>
         <div className={`column start m-bottom-3 ${styles.inputContainer}`}>
           <label htmlFor={UserFieldIds.PASSWORD} className={`m-bottom-2 ${styles.label}`}>
-            Password
+            {i18next.t('SignUp:password') as string}
           </label>
           <input
             type="password"
@@ -126,7 +123,7 @@ function SignUp() {
           )}
         </div>
         <button type="submit" className={`m-bottom-3 ${styles.signUpButton}`}>
-          {mutation.isLoading ? <Loading /> : 'Sign Up'}
+          {mutation.isLoading ? <Loading /> : i18next.t('SignUp:signUpTitle')}
         </button>
         <div className={`m-bottom-3 ${styles.line}`} />
         <button type="button" className={styles.signUpButtonSecondary} />

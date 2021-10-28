@@ -1,16 +1,18 @@
 @import '../../scss/variables/colors';
 
+@import '../../scss/variables/texts';
+
 .navbar {
   align-items: center;
   border-top: 6px solid $cian;
+  box-shadow: 0 2px 15px 0 $gray;
   display: flex;
   height: 70px;
   justify-content: space-around;
-  box-shadow: 0 2px 15px 0 $gray;
   width: 100%;
 }
 
 .logout-button {
   color: $black;
-  font-size: 18px;
+  font-size: $font-size-large;
 }
