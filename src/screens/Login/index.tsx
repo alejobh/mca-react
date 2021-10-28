@@ -9,7 +9,7 @@ import WoloxLogo from 'assets/LogoWolox-Original.png';
 import { login } from 'services/LoginService';
 import Loading from 'components/Spinner/components/loading';
 
-import { LoginProps, InputsValues, UserFieldIds } from '../../../../interfaces/interfaces';
+import { LoginProps, InputsValues, UserFieldIds } from '../../interfaces/interfaces';
 
 import styles from './styles.module.scss';
 
@@ -28,15 +28,15 @@ function Login() {
       setNotCredentials(true);
     },
     onSuccess: data => {
-      console.log(data.headers);
-      history.push('/sign_up');
+      data.headers && window.localStorage.setItem('access-token', data.headers['access-token']);
+      history.push('/home');
     }
   });
 
   const onSubmit = (user: LoginProps) => mutation.mutate(user);
 
   return (
-    <div className="column center middle full-width">
+    <div className="column center middle full-width full-height">
       <form className={`m-bottom-2 ${styles.loginForm}`} onSubmit={handleSubmit(onSubmit)}>
         <img
           src={WoloxLogo}

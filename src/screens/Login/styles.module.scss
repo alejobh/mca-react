@@ -1,6 +1,6 @@
-@import '../../../../scss//variables/colors';
+@import '../../scss/variables/colors';
 
-@import '../../../../scss/variables/texts';
+@import '../../scss/variables/texts';
 
 .login-form {
   align-items: center;
@@ -15,8 +15,8 @@
 
 .logo {
   height: 70px;
-  width: 212px;
   object-fit: contain;
+  width: 212px;
 }
 
 .input-container {
@@ -48,7 +48,7 @@
   width: 100%;
 
   &-secondary {
-    background-image: url('../../../../assets/sign-up.png');
+    background-image: url('../../assets/sign-up.png');
     height: 32px;
     width: 100%;
   }

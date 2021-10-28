@@ -1,13 +1,18 @@
+@import '../../scss/variables/colors';
+
 @import '../../scss/variables/texts';
 
 .navbar {
-  height: 50px;
+  align-items: center;
+  border-top: 6px solid $cian;
+  box-shadow: 0 2px 15px 0 $gray;
+  display: flex;
+  height: 70px;
+  justify-content: space-around;
+  width: 100%;
+}
 
-  &-item {
-    padding: 10px;
-  }
-
-  &-link {
-    font-size: $font-size-medium;
-  }
+.logout-button {
+  color: $black;
+  font-size: $font-size-large;
 }
