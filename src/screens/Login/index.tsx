@@ -28,7 +28,6 @@ function Login() {
       setNotCredentials(true);
     },
     onSuccess: data => {
-      console.log(data.headers);
       data.headers && window.localStorage.setItem('access-token', data.headers['access-token']);
       history.push('/home');
     }

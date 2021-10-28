@@ -9,7 +9,7 @@ import styles from './styles.module.scss';
 function Header() {
   const history = useHistory();
 
-  const logout = () => {
+  const handleLogout = () => {
     localStorage.getItem('access-token') && localStorage.removeItem('access-token');
     history.replace('/login');
   };
@@ -18,7 +18,7 @@ function Header() {
     <header>
       <nav className={styles.navbar}>
         <img src={LogoWolox} />
-        <button type="button" onClick={logout} className={styles.logoutButton}>
+        <button type="button" onClick={handleLogout} className={styles.logoutButton}>
           {i18next.t('Header:logout')}
         </button>
       </nav>
