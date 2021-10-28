@@ -1,8 +1,4 @@
 import api from '../config/api';
-
-export interface LoginProps {
-  email: string;
-  password: string;
-}
+import { LoginProps } from '../interfaces/interfaces';
 
 export const login = (user: LoginProps) => api.post('/users/sign_in', user);

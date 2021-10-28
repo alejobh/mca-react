@@ -1,5 +1,7 @@
 @import '../../scss/variables/colors';
 
+@import '../../scss/variables/texts';
+
 .sign-up-form {
   align-items: center;
   background-color: $white-smoke;
@@ -28,12 +30,12 @@
 
 .input-error {
   color: $red;
-  font-size: 10px;
+  font-size: $font-size-small;
 }
 
 .label {
   color: $black;
-  font-size: 16px;
+  font-size: $font-size-medium;
   line-height: 20px;
 }
 
@@ -41,7 +43,7 @@
   background-color: $yellow-green;
   border-radius: 5px;
   color: $white;
-  font-size: 16px;
+  font-size: $font-size-medium;
   height: 32px;
   width: 100%;
 
@@ -64,6 +66,5 @@
 
 .error {
   color: $red;
-  display: block;
-  font-size: 20px;
+  font-size: $font-size-large;
 }
