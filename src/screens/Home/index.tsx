@@ -1,5 +1,4 @@
 /* eslint-disable react/react-in-jsx-scope */
-
 import Login from './components/Login';
 import styles from './styles.module.scss';
 

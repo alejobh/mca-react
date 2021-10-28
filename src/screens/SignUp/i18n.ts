@@ -12,6 +12,5 @@ i18next.addResources('es', 'SignUp', {
   validFormatPassword: 'Debe contener 1 mayúscula, 1 minúscula y 1 número',
   minLenghtPassword: 'Mínimo 8 caracteres',
   noMatchPassword: 'Las contraseñas no coinciden',
-  messageError: 'Error al crear usuario',
-  altLogoWolox: 'Wolox'
+  messageError: 'Error al crear usuario'
 });

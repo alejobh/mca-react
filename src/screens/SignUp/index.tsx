@@ -5,21 +5,12 @@ import { useMutation } from 'react-query';
 import i18next from 'i18next';
 
 import WoloxLogo from 'assets/LogoWolox-Original.png';
-import { signUp, UserForm } from 'services/UserService';
+import { signUp } from 'services/UserService';
 import Loading from 'components/Spinner/components/loading';
 
-import styles from './styles.module.scss';
+import { UserForm } from '../../interfaces/interfaces';
 
-/* eslint-disable @typescript-eslint/naming-convention */
-type InputsValues = {
-  email: string;
-  password: string;
-  password_confirmation: string;
-  first_name: string;
-  last_name: string;
-  locale: string;
-};
-/* eslint-enable @typescript-eslint/naming-convention */
+import styles from './styles.module.scss';
 
 enum UserFieldIds {
   FIRST_NAME = 'first_name',
@@ -35,7 +26,7 @@ function SignUp() {
     handleSubmit,
     formState: { errors },
     watch
-  } = useForm<InputsValues>();
+  } = useForm<UserForm>();
 
   const mutation = useMutation(signUp, {
     onError: error => {
@@ -53,7 +44,7 @@ function SignUp() {
       <form className={`m-bottom-2 ${styles.signUpForm}`} onSubmit={handleSubmit(onSubmit)}>
         <img
           src={WoloxLogo}
-          alt={`${i18next.t('SignUp:altLogoWolox')}`}
+          alt={`${i18next.t('Global:logoWolox')}`}
           className={`m-bottom-3 ${styles.logo}`}
         />
         <div className={`column start m-bottom-3 ${styles.inputContainer}`}>
