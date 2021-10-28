@@ -7,7 +7,7 @@ import PrivateRoute from './types';
 
 function Routes() {
   const queryClient = new QueryClient();
-  console.log(routes.private);
+
   return (
     <Router>
       <QueryClientProvider client={queryClient}>

@@ -6,7 +6,7 @@ import Header from '../Header';
 // eslint-disable-next-line react/prop-types
 function PrivateRoute({ component: Component, ...rest }) {
   const auth = window.localStorage.getItem('access-token');
-  console.log(auth);
+
   return (
     <Route {...rest}>
       {auth ? (
