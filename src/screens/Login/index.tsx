@@ -29,7 +29,7 @@ function Login() {
     },
     onSuccess: data => {
       data.headers && window.localStorage.setItem('access-token', data.headers['access-token']);
-      history.push('/home');
+      history.push('/');
     }
   });
 
