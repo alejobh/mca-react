@@ -11,16 +11,14 @@ function Routes() {
   return (
     <Router>
       <QueryClientProvider client={queryClient}>
-        <div>
-          <Switch>
-            {routes.private.map(({ path, component, name }) => (
-              <PrivateRoute exact key={name} path={path} component={component} />
-            ))}
-            {routes.public.map(({ path, component, name }) => (
-              <Route exact path={path} component={component} key={name} />
-            ))}
-          </Switch>
-        </div>
+        <Switch>
+          {routes.private.map(({ path, component, name }) => (
+            <PrivateRoute exact key={name} path={path} component={component} />
+          ))}
+          {routes.public.map(({ path, component, name }) => (
+            <Route exact path={path} component={component} key={name} />
+          ))}
+        </Switch>
       </QueryClientProvider>
     </Router>
   );
