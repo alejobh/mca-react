@@ -1,13 +1,18 @@
 /* eslint-disable @typescript-eslint/naming-convention */
-import api from '../config/api';
+import { create } from 'apisauce';
 
-// const HEADERS_VALUES = {
-//   ACCESS_TOKEN: 'access-token',
-//   CLIENT: 'client',
-//   UID: 'uid'
-// };
+import { HEADERS } from '../constants/constants';
 
-const HEADERS = window.localStorage.getItem('headers');
-console.log(HEADERS);
+// const HEADERS = window.localStorage.getItem('headers');
+console.log('headers book', HEADERS['access-token']);
+// const CLIENT = window.localStorage.getItem('client');
+// const UID = window.localStorage.getItem('uid');
 
-export const getBooks = () => api.get('/books', {});
+const { token, client, uid } = HEADERS;
+const ACCESS_TOKEN = token;
+
+const baseURL = process.env.REACT_APP_API_BASE_URL;
+
+const headers = create({ baseURL, headers: { 'access-token': ACCESS_TOKEN, client, uid } });
+
+export const getBooks = () => headers.get('/books', {});

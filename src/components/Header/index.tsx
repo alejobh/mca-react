@@ -2,6 +2,7 @@
 import { useHistory } from 'react-router-dom';
 import i18next from 'i18next';
 
+import { HEADERS } from '../../constants/constants';
 import LogoWolox from '../../assets/LogoWolox-Original.png';
 
 import styles from './styles.module.scss';
@@ -10,7 +11,8 @@ function Header() {
   const history = useHistory();
 
   const handleLogout = () => {
-    localStorage.getItem('access-token') && localStorage.removeItem('access-token');
+    const { token } = HEADERS;
+    token && localStorage.removeItem('headers');
     history.replace('/login');
   };
 
