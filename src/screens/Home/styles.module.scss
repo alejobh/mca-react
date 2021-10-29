@@ -1,13 +1,13 @@
 .app {
   align-items: center;
   display: flex;
-  height: 100vh;
-  justify-content: center;
+  flex-wrap: wrap;
+  margin: 10px 190px;
 }
 
 .app-link {
-  font-size: calc(10px + 2vmin);
   color: #61DAFB;
+  font-size: calc(10px + 2vmin);
   text-decoration: underline;
 }
 

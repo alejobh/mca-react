@@ -1,0 +1,32 @@
+@import '../../scss/variables/colors';
+
+.book-container {
+  border: 1px solid $black;
+  height: 300px;
+  margin: 20px;
+  padding: 20px;
+  width: 200px;
+}
+
+.book {
+  height: 100%;
+  width: 100%;
+
+  &-image {
+    background-image: url('../../assets/LogoWolox-Original.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    height: 200px;
+    width: 100%;
+  }
+
+  &-caption {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &-title {
+    font-weight: 600;
+  }
+}
