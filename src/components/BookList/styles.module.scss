@@ -2,10 +2,11 @@
 
 .book-container {
   border: 1px solid $black;
-  height: 300px;
+  box-shadow: 10px 10px 10px rgba(136, 136, 136, 0.5);
+  height: 290px;
   margin: 20px;
   padding: 20px;
-  width: 200px;
+  width: 185px;
 }
 
 .book {
