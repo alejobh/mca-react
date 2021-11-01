@@ -1,12 +1,14 @@
 @import '../../scss/variables/colors';
 
+@import '../../scss/variables/texts';
+
 .book-container {
   border: 1px solid $black;
   box-shadow: 10px 10px 10px rgba(136, 136, 136, 0.5);
-  height: 290px;
-  margin: 20px;
+  height: 320px;
+  margin: 30px;
   padding: 20px;
-  width: 185px;
+  width: 215px;
 }
 
 .book {
@@ -14,10 +16,6 @@
   width: 100%;
 
   &-image {
-    background-image: url('../../assets/LogoWolox-Original.png');
-    background-repeat: no-repeat;
-    background-size: contain;
-    background-position: center;
     height: 200px;
     width: 100%;
   }
@@ -28,6 +26,8 @@
   }
 
   &-title {
+    color: $black;
+    font-size: $font-size-medium;
     font-weight: 600;
   }
 }

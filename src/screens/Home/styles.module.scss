@@ -1,22 +1,15 @@
+@import '../../scss/variables/texts';
+
 .app {
   align-items: center;
   display: flex;
+  height: 100vh;
+  justify-content: center;
   flex-wrap: wrap;
-  margin: 10px 225px;
+  margin: 0 auto;
+  max-width: 1100px;
 }
 
-.app-link {
-  color: #61DAFB;
-  font-size: calc(10px + 2vmin);
-  text-decoration: underline;
-}
-
-@keyframes app-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-
-  to {
-    transform: rotate(360deg);
-  }
+.loading {
+  font-size: $font-size-xlarge;
 }

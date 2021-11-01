@@ -8,19 +8,11 @@ import BookList from '../../components/BookList';
 import styles from './styles.module.scss';
 
 function Home() {
-  const books = useQuery('books', getBooks);
-  const page = books.data?.data;
-  page ? console.log('books home', page) : null;
+  const { isLoading, data } = useQuery('books', getBooks);
 
   return (
     <div className={styles.app}>
-      <BookList />
-      <BookList />
-      <BookList />
-      <BookList />
-      <BookList />
-      <BookList />
-      <BookList />
+      {isLoading ? <span className={styles.loading}>Loading...</span> : <BookList books={data} />}
     </div>
   );
 }
