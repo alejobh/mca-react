@@ -9,7 +9,9 @@ import styles from './styles.module.scss';
 
 function Home() {
   const books = useQuery('books', getBooks);
-  console.log(books);
+  const page = books.data?.data;
+  page ? console.log('books home', page) : null;
+
   return (
     <div className={styles.app}>
       <BookList />

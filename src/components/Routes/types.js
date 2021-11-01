@@ -1,14 +1,11 @@
 import React from 'react';
 import { Redirect, Route } from 'react-router-dom';
 
+import { HEADERS } from '../../constants/constants';
 import Header from '../Header';
 
 // eslint-disable-next-line react/prop-types
-export const HEADERS = JSON.parse(window.localStorage.getItem('headers'));
-// eslint-disable-next-line react/prop-types
 function PrivateRoute({ component: Component, ...rest }) {
-  // const { client, uid } = HEADERS;
-  // console.log(client, uid);
   const auth = HEADERS['access-token'];
 
   return (

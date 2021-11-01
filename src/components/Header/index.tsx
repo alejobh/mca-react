@@ -11,8 +11,7 @@ function Header() {
   const history = useHistory();
 
   const handleLogout = () => {
-    const { token } = HEADERS;
-    token && localStorage.removeItem('headers');
+    HEADERS['access-token'] && localStorage.removeItem('headers');
     history.replace('/login');
   };
 

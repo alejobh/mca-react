@@ -3,11 +3,6 @@ import { create } from 'apisauce';
 
 import { HEADERS } from '../constants/constants';
 
-// const HEADERS = window.localStorage.getItem('headers');
-console.log('headers book', HEADERS['access-token']);
-// const CLIENT = window.localStorage.getItem('client');
-// const UID = window.localStorage.getItem('uid');
-
 const { token, client, uid } = HEADERS;
 const ACCESS_TOKEN = token;
 

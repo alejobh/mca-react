@@ -1,1 +1,1 @@
-export const HEADERS = JSON.parse(window.localStorage.getItem('headers') || '');
+export const HEADERS = JSON.parse(window.localStorage.getItem('headers') || '{}');

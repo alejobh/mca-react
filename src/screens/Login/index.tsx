@@ -28,13 +28,7 @@ function Login() {
       setNotCredentials(true);
     },
     onSuccess: data => {
-      if (data.headers) {
-        // window.localStorage.setItem('access-token', data.headers['access-token']);
-        window.localStorage.setItem('headers', JSON.stringify({ ...data.headers }));
-        // window.localStorage.setItem('access-token', data.headers['access-token']);
-        // window.localStorage.setItem('client', data.headers.client);
-        // window.localStorage.setItem('uid', data.headers.uid);
-      }
+      data.headers && window.localStorage.setItem('headers', JSON.stringify({ ...data.headers }));
       history.push('/');
     }
   });
