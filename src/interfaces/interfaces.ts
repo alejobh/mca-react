@@ -29,7 +29,7 @@ export interface Book {
   editor?: string;
   genre?: string;
   id?: number;
-  imageUrl?: string;
+  image_url?: string;
   title?: string;
   updatedAt?: string;
   year?: string;

@@ -8,13 +8,17 @@ import BookList from '../../components/BookList';
 import styles from './styles.module.scss';
 
 function Home() {
-  const { isLoading, data } = useQuery('books', getBooks);
+  const { isLoading, data, isError, error } = useQuery('books', getBooks);
 
-  console.log('data', data?.data?.page);
+  const books = data?.data?.page;
+
+  if (isError) {
+    return <span>{`Error: ${error}`}</span>;
+  }
 
   return (
     <div className={styles.app}>
-      {isLoading ? <span className={styles.loading}>Loading...</span> : <BookList books={data?.data?.page} />}
+      {isLoading ? <span className={styles.loading}>Loading...</span> : <BookList books={books} />}
     </div>
   );
 }
