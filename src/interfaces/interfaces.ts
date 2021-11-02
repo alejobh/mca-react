@@ -22,4 +22,21 @@ export interface UserForm {
   last_name: string;
   locale: string;
 }
+
+export interface Book {
+  author?: string;
+  createdAt?: string;
+  editor?: string;
+  genre?: string;
+  id?: number;
+  image_url?: string;
+  title?: string;
+  updatedAt?: string;
+  year?: string;
+}
+
+export interface BookPage {
+  page: Array<Book>;
+}
+
 /* eslint-enable @typescript-eslint/naming-convention */

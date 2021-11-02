@@ -28,7 +28,7 @@ function Login() {
       setNotCredentials(true);
     },
     onSuccess: data => {
-      data.headers && window.localStorage.setItem('access-token', data.headers['access-token']);
+      data.headers && window.localStorage.setItem('headers', JSON.stringify({ ...data.headers }));
       history.push('/');
     }
   });

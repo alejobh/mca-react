@@ -1,0 +1,33 @@
+@import '../../scss/variables/colors';
+
+@import '../../scss/variables/texts';
+
+.book-container {
+  border: 1px solid $black;
+  box-shadow: 10px 10px 10px $gray-shadow;
+  height: 320px;
+  margin: 30px;
+  padding: 20px;
+  width: 215px;
+}
+
+.book {
+  height: 100%;
+  width: 100%;
+
+  &-image {
+    height: 200px;
+    width: 100%;
+  }
+
+  &-caption {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &-title {
+    color: $black;
+    font-size: $font-size-medium;
+    font-weight: 600;
+  }
+}
