@@ -10,9 +10,11 @@ import styles from './styles.module.scss';
 function Home() {
   const { isLoading, data } = useQuery('books', getBooks);
 
+  console.log('data', data?.data?.page);
+
   return (
     <div className={styles.app}>
-      {isLoading ? <span className={styles.loading}>Loading...</span> : <BookList books={data} />}
+      {isLoading ? <span className={styles.loading}>Loading...</span> : <BookList books={data?.data?.page} />}
     </div>
   );
 }

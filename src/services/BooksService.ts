@@ -1,16 +1,8 @@
 /* eslint-disable @typescript-eslint/naming-convention */
 import { create } from 'apisauce';
 
+import { BookPage } from '../interfaces/interfaces';
 import { HEADERS } from '../constants/constants';
-
-interface BookPage {
-  page: Array<{
-    id: number;
-    author: string;
-    title: string;
-    imageUrl: string;
-  }>;
-}
 
 const { token, client, uid } = HEADERS;
 const ACCESS_TOKEN = token;
