@@ -1,3 +1,5 @@
+import BookDetail from 'screens/BookDetail';
+
 import Home from '../../screens/Home';
 import Login from '../../screens/Login';
 import SignUp from '../../screens/SignUp';
@@ -8,6 +10,11 @@ const routes = {
       path: '/',
       name: 'home',
       component: Home
+    },
+    {
+      path: '/books/:id',
+      name: 'book_detail',
+      component: BookDetail
     }
   ],
   public: [

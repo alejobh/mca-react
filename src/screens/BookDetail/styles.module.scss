@@ -1,0 +1,49 @@
+@import '../../scss/variables/colors';
+
+@import '../../scss/variables/texts';
+
+.container {
+  height: 100vh;
+  margin: 0 auto;
+  padding: 20px;
+  width: 100%;
+}
+
+.book-detail-container {
+  border: 1px solid $black;
+  height: 300px;
+  padding: 20px;
+  width: 650px;
+}
+
+.title-container {
+  border-bottom: 3px solid $yellow-green;
+}
+
+.book {
+  height: 100%;
+  width: 100%;
+
+  &-image {
+    height: 100%;
+    width: 200px;
+  }
+
+  &-caption {
+    height: 100%;
+    width: 100%;
+  }
+
+  &-title {
+    color: $black;
+    font-size: $font-size-large;
+    font-weight: 600;
+    padding-bottom: 15px;
+  }
+
+  &-info-title {
+    color: $black;
+    font-size: $font-size-medium;
+    font-weight: 600;
+  }
+}

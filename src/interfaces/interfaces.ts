@@ -36,7 +36,7 @@ export interface Book {
 }
 
 export interface BookPage {
-  page: Array<Book>;
+  page: Book[];
 }
 
 /* eslint-enable @typescript-eslint/naming-convention */

@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/naming-convention */
 import { create } from 'apisauce';
 
-import { Book, BookPage } from '../interfaces/interfaces';
+import { BookPage } from '../interfaces/interfaces';
 import { HEADERS } from '../constants/constants';
 
 const { token, client, uid } = HEADERS;
@@ -13,4 +13,5 @@ const headers = create({ baseURL, headers: { 'access-token': ACCESS_TOKEN, clien
 
 export const getBooks = () => headers.get<BookPage>('/books', {});
 
-export const getBook = (id: number) => headers.get<Book>(`/books/${id}`);
+// export const getBook = () => headers.get<any>('/books', {});
+// console.log(HEADERS);
