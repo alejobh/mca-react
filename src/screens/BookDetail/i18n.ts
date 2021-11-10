@@ -4,5 +4,5 @@ i18next.addResources('es', 'BookDetail', {
   author: 'Autor del libro',
   editorial: 'Editorial',
   yearPublication: 'Año de publicación',
-  imageArrowBack: 'Atrás'
+  altArrowBack: 'image-arrow-back'
 });

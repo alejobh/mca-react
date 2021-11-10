@@ -27,9 +27,9 @@ function BookList() {
   return (
     <>
       {isError ? (
-        <span>Error: Error</span>
+        <span>{i18next.t('Global:error')}</span>
       ) : isLoading ? (
-        <span>Loading...</span>
+        <span>{`${i18next.t('Global:loading')}...`}</span>
       ) : (
         books?.map(({ id, image_url, title, author }: Book) => (
           <Link to={`/books/${id}`} key={id}>

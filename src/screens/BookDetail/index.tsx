@@ -30,9 +30,9 @@ function BookDetail() {
   return (
     <>
       {isError ? (
-        <span>Error: Error</span>
+        <span>{i18next.t('Global:error')}</span>
       ) : isLoading ? (
-        <span>Loading...</span>
+        <span>{`${i18next.t('Global:loading')}...`}</span>
       ) : (
         <div className={`column center ${styles.container}`}>
           <button type="button" onClick={handleBack} className="row middle self-start m-bottom-9">
