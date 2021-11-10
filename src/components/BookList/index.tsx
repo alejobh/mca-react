@@ -16,8 +16,11 @@ function BookList() {
   // eslint-disable-next-line react-hooks/exhaustive-deps
   const page = data?.data?.page ? data?.data.page : [];
   const books = useSelector(state => state.page);
-  console.log('state', books);
   const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(actionCreators.setBooks(page));
+  }, [page, dispatch]);
 
   if (isLoading) {
     return <span>Loading...</span>;
@@ -27,10 +30,6 @@ function BookList() {
     return <span>Error: error</span>;
   }
 
-  // eslint-disable-next-line react-hooks/rules-of-hooks
-  useEffect(() => {
-    dispatch(actionCreators.setBooks(page));
-  }, [page, dispatch]);
   return (
     <>
       {books?.map(({ id, image_url, title, author }: Book) => (
