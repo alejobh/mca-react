@@ -5,11 +5,9 @@ export interface State {
   page: Book[];
 }
 
-/* eslint-disable @typescript-eslint/naming-convention */
 export const INITIAL_STATE = {
   page: []
 };
-/* eslint-enable @typescript-eslint/naming-convention */
 
 enum ActionTypes {
   SET_BOOKS = 'SET_BOOKS'
