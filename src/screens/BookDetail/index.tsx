@@ -10,8 +10,12 @@ import iconBack from '../../assets/chevron.png';
 
 import styles from './styles.module.scss';
 
+type BookParams = {
+  id: string;
+};
+
 function BookDetail() {
-  const { id } = useParams<any>();
+  const { id } = useParams<BookParams>();
   const history = useHistory();
   const { isLoading, data, isError } = useQuery(['book', id], () => getBook(id));
 
@@ -33,11 +37,15 @@ function BookDetail() {
   return (
     <div className={`column center ${styles.container}`}>
       <button type="button" onClick={handleBack} className="row middle self-start m-bottom-9">
-        <img src={iconBack} className={`m-right-4 ${styles.iconBack}`} />
+        <img
+          src={iconBack}
+          alt={`${i18next.t('BookDetail:back')}`}
+          className={`m-right-4 ${styles.iconBack}`}
+        />
         <span className={styles.buttonBackText}>{i18next.t('BookDetail:back')}</span>
       </button>
       <div className={`row ${styles.bookDetailContainer}`}>
-        <img src={image_url} className={`m-right-4 ${styles.bookImage}`} />
+        <img src={image_url} alt={title} className={`m-right-4 ${styles.bookImage}`} />
         <div className={`column ${styles.bookCaption}`}>
           <div className={`m-bottom-4 ${styles.titleContainer}`}>
             <p className={`m-right-2 ${styles.bookTitle}`}>{title}</p>

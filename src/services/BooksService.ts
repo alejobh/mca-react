@@ -13,4 +13,4 @@ const headers = create({ baseURL, headers: { 'access-token': ACCESS_TOKEN, clien
 
 export const getBooks = () => headers.get<BookPage>('/books', {});
 
-export const getBook = (id: any) => headers.get<Book>(`/books/${id}`, {});
+export const getBook = (id: string) => headers.get<Book>(`/books/${id}`, {});
