@@ -15,5 +15,6 @@ describe('BookList component', () => {
       </QueryClientProvider>
     );
     component.getByText(`${i18next.t('Global:loading')}...`);
+    expect(component).toMatchSnapshot();
   });
 });

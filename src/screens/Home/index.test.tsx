@@ -1,6 +1,7 @@
 import React from 'react';
 import { render } from '@testing-library/react';
 import { QueryClient, QueryClientProvider } from 'react-query';
+import i18next from 'i18next';
 
 import Home from './index';
 
@@ -14,5 +15,6 @@ describe('Home component', () => {
       </QueryClientProvider>
     );
     expect(component).toMatchSnapshot();
+    component.getByText(`${i18next.t('Global:loading')}...`);
   });
 });
