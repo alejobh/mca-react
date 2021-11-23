@@ -52,7 +52,9 @@ function SignUp() {
             {i18next.t('SignUp:firstName')}
           </label>
           <input
-            {...register(UserFieldIds.FIRST_NAME, { required: i18next.t('SignUp:required') as string })}
+            {...register(UserFieldIds.FIRST_NAME, {
+              required: i18next.t('SignUp:required') as string
+            })}
             className={styles.input}
           />
           {errors.first_name && <span className={styles.inputError}>{errors.first_name.message}</span>}
@@ -62,7 +64,9 @@ function SignUp() {
             {i18next.t('SignUp:lastName')}
           </label>
           <input
-            {...register(UserFieldIds.LAST_NAME, { required: i18next.t('SignUp:required') as string })}
+            {...register(UserFieldIds.LAST_NAME, {
+              required: i18next.t('SignUp:required') as string
+            })}
             className={styles.input}
           />
           {errors.last_name && <span className={styles.inputError}>{errors.last_name.message}</span>}
