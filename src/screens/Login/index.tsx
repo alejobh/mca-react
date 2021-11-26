@@ -23,8 +23,7 @@ function Login() {
   const [notCredentials, setNotCredentials] = useState(false);
 
   const mutation = useMutation(login, {
-    onError: error => {
-      console.log(error);
+    onError: () => {
       setNotCredentials(true);
     },
     onSuccess: data => {
@@ -44,10 +43,11 @@ function Login() {
           className={`m-bottom-3 ${styles.logo}`}
         />
         <div className={`column start m-bottom-3 ${styles.inputContainer}`}>
-          <label htmlFor={UserFieldIds.EMAIL} className={`m-bottom-2 ${styles.label}`}>
+          <label htmlFor={UserFieldIds.EMAIL} className={`m-bottom-2 ${styles.label}`} id="email-label">
             {i18next.t('SignUp:email')}
           </label>
           <input
+            aria-labelledby="email-label"
             type="email"
             {...register(UserFieldIds.EMAIL, {
               required: i18next.t('SignUp:required') as string,
@@ -61,10 +61,11 @@ function Login() {
           {errors.email && <span className={styles.inputError}>{errors.email.message}</span>}
         </div>
         <div className={`column start m-bottom-3 ${styles.inputContainer}`}>
-          <label htmlFor={UserFieldIds.PASSWORD} className={`m-bottom-2 ${styles.label}`}>
+          <label htmlFor={UserFieldIds.PASSWORD} className={`m-bottom-2 ${styles.label}`} id="password-label">
             {i18next.t('Login:password')}
           </label>
           <input
+            aria-labelledby="password-label"
             type="password"
             {...register(UserFieldIds.PASSWORD, {
               required: i18next.t('SignUp:required') as string,
